@@ -1,0 +1,5 @@
+= Changelog
+
+== 2026-07-24 — Org welcome site
+
+* link:changelog-details/2026-07-24%20-%20org-welcome-site.adoc[Org welcome site]

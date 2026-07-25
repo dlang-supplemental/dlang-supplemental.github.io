@@ -1,0 +1,4 @@
+= Org welcome site
+:date: 2026-07-24
+
+Created the `dlang-supplemental.github.io` organization Pages site with a branded welcome page: philosophy, links to notable repositories, and a primary CTA to the Antora docs hub at https://dlang-supplemental.github.io/docs/.

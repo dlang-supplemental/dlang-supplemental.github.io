@@ -1,0 +1,10 @@
+*
+!.gitignore
+!README.adoc
+!CHANGELOG.adoc
+!changelog-details/
+!changelog-details/**
+!index.html
+!styles.css
+!logo.svg
+!logo-256.png

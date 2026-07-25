@@ -1,0 +1,17 @@
+= dlang-supplemental.github.io
+:toc: preamble
+
+Organization welcome site for https://github.com/dlang-supplemental[dlang-supplemental].
+
+* Live site: https://dlang-supplemental.github.io/
+* Docs hub (Antora): https://dlang-supplemental.github.io/docs/
+
+== Contents
+
+* `index.html` — welcome page (philosophy, notable repos, docs CTA)
+* `styles.css` — page styles
+* `logo.svg` / `logo-256.png` — org mark
+
+== Changelog
+
+See link:CHANGELOG.adoc[CHANGELOG].

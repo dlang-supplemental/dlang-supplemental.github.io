@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dlang-supplemental</title>
+  <meta name="description" content="Utilities, reimplementations, fixes, and services that strengthen the D programming language ecosystem." />
+  <link rel="icon" href="logo.svg" type="image/svg+xml" />
+  <link rel="preload" href="logo.svg" as="image" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+
+  <header class="hero">
+    <div class="hero__brand">
+      <img class="hero__mark" src="logo.svg" width="96" height="96" alt="" />
+      <p class="hero__name">dlang-supplemental</p>
+    </div>
+    <h1 class="hero__headline">D, plus what the ecosystem still needs.</h1>
+    <p class="hero__lede">
+      Utilities, reimplementations, bindings, fixes, and services that fill gaps
+      in the D programming language stack—without waiting on the core language to ship them.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="https://dlang-supplemental.github.io/docs/">Read the docs</a>
+      <a class="btn btn--ghost" href="https://github.com/dlang-supplemental">Browse the org</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section philosophy" aria-labelledby="philosophy-title">
+      <h2 id="philosophy-title">Philosophy</h2>
+      <p class="section__lede">
+        We treat D as a systems language worth investing in: fast to compile,
+        pleasant to write, and capable of native tooling that does not lean on
+        a second runtime when D can do the job.
+      </p>
+      <ul class="principles">
+        <li>
+          <strong>Supplement, don’t fork the language.</strong>
+          Prefer libraries, tools, and docs that plug into the existing D world
+          over alternate dialects or siloed stacks.
+        </li>
+        <li>
+          <strong>Native when it matters; bridge when it’s smarter.</strong>
+          Reimplement in D when control and deployment win (Asciidoctor, JSON5, tensors).
+          Bind carefully when another ecosystem already solved the hard part
+          (JPEG&nbsp;XL, Vello, OpenTUI).
+        </li>
+        <li>
+          <strong>Ship with documentation.</strong>
+          Notable projects land in the shared Antora docs hub so users can discover
+          and learn them in one place.
+        </li>
+        <li>
+          <strong>Practical over ceremonial.</strong>
+          Prefer small, usable modules and services over grand frameworks that
+          never leave the README stage.
+        </li>
+      </ul>
+    </section>
+
+    <section class="section projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Notable projects</h2>
+      <p class="section__lede">
+        A short list of org work worth opening first. Full catalogs live on
+        <a href="https://github.com/dlang-supplemental">GitHub</a>.
+      </p>
+      <ul class="project-list">
+        <li>
+          <a href="https://github.com/dlang-supplemental/asciidoctor-d">
+            <span class="project-list__name">asciidoctor-d</span>
+            <span class="project-list__desc">Native D Asciidoctor — fast AsciiDoc processing without Ruby.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/dlang-supplemental/opentui-d">
+            <span class="project-list__name">opentui-d</span>
+            <span class="project-list__desc">D bindings for OpenTUI’s Zig terminal UI core.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/dlang-supplemental/jxl-d">
+            <span class="project-list__name">jxl-d</span>
+            <span class="project-list__desc">JPEG&nbsp;XL for D: decode via jxl-rs, encode via libjxl.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/dlang-supplemental/vibe-search-core">
+            <span class="project-list__name">vibe-search</span>
+            <span class="project-list__desc">CLIP-backed semantic search stack (core + desktop).</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/dlang-supplemental/densor">
+            <span class="project-list__name">densor</span>
+            <span class="project-list__desc">Pure-D tensors and GGUF inference used by vibe-search.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/dlang-supplemental/vector-store-dlang">
+            <span class="project-list__name">vector-store-dlang</span>
+            <span class="project-list__desc">Vector store and embedding utilities in D.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/dlang-supplemental/vello-d">
+            <span class="project-list__name">vello-d</span>
+            <span class="project-list__desc">GPU-accelerated 2D vector graphics powered by Vello.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/dlang-supplemental/repo-get">
+            <span class="project-list__name">repo-get</span>
+            <span class="project-list__desc">Multi-VCS fetch library with SDL profiles (git, svn, hg, fossil…).</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/dlang-supplemental/json5-dlang">
+            <span class="project-list__name">json5-dlang</span>
+            <span class="project-list__desc">Native JSON5 implementation for configuration-friendly data.</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/dlang-supplemental/dlang-gui-samples">
+            <span class="project-list__name">dlang-gui-samples</span>
+            <span class="project-list__desc">Side-by-side samples across D GUI toolkits.</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section docs-cta" aria-labelledby="docs-title">
+      <h2 id="docs-title">Documentation hub</h2>
+      <p class="section__lede">
+        Project guides and API-oriented docs are published together with Antora.
+        Start at the portal, then drill into each component.
+      </p>
+      <p>
+        <a class="btn btn--primary" href="https://dlang-supplemental.github.io/docs/">Open Antora docs</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      <a href="https://github.com/dlang-supplemental">github.com/dlang-supplemental</a>
+      · Contributions to the D ecosystem
+    </p>
+  </footer>
+</body>
+</html>
