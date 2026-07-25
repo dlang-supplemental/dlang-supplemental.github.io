@@ -3,8 +3,8 @@
   --brand-deep: #8a2c26;
   --ink: #1a1412;
   --ink-soft: #4a3f3b;
-  --paper: #f7f2ed;
-  --paper-2: #efe6dc;
+  --paper: #f3f1ef;
+  --paper-2: #e8e4e0;
   --line: color-mix(in srgb, var(--ink) 12%, transparent);
   --font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
   --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
