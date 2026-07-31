@@ -1,0 +1,5 @@
+= Featured dub-publish on the welcome site
+:date: 2026-07-31
+
+* Listed https://github.com/dlang-supplemental/dub-publish[`dub-publish`] under Notable projects.
+* Linked the Antora guide https://dlang-supplemental.github.io/docs/docs/publishing-packages-from-the-cli.html[Publishing D packages from the CLI] from the docs CTA.
