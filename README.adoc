@@ -1,12 +1,44 @@
-= dlang-supplemental.github.io
+ifndef::env-github[:icons: font]
 :toc: preamble
+:toclevels: 2
+:sectanchors:
+
+ifndef::env-github[]
+image:https://img.shields.io/github/contributors/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Contributors,link=https://github.com/dlang-supplemental/dlang-supplemental.github.io/graphs/contributors]
+image:https://img.shields.io/github/forks/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Forks,link=https://github.com/dlang-supplemental/dlang-supplemental.github.io/network/members]
+image:https://img.shields.io/github/stars/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Stars,link=https://github.com/dlang-supplemental/dlang-supplemental.github.io/stargazers]
+image:https://img.shields.io/github/issues/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Issues,link=https://github.com/dlang-supplemental/dlang-supplemental.github.io/issues]
+endif::[]
+
+ifdef::env-github[]
+image:https://img.shields.io/github/contributors/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Contributors]
+image:https://img.shields.io/github/forks/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Forks]
+image:https://img.shields.io/github/stars/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Stars]
+image:https://img.shields.io/github/issues/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Issues]
+endif::[]
+
+= dlang-supplemental.github.io
 
 Organization welcome site for https://github.com/dlang-supplemental[dlang-supplemental].
+
+link:https://dlang-supplemental.github.io/[Visit site] ·
+link:https://dlang-supplemental.github.io/docs/[Explore the docs] ·
+link:https://github.com/dlang-supplemental/dlang-supplemental.github.io/issues[Report Bug]
+
+== About The Project
 
 * Live site: https://dlang-supplemental.github.io/
 * Docs hub (Antora): https://dlang-supplemental.github.io/docs/
 
-== Contents
+== Built With
+
+* HTML and CSS (static GitHub Pages site)
+
+== Getting Started
+
+Open `index.html` locally or push to the `main` branch; GitHub Pages serves the site from this repository.
+
+== Usage
 
 * `index.html` — welcome page (philosophy, notable repos, docs CTA)
 * `styles.css` — page styles
@@ -15,3 +47,10 @@ Organization welcome site for https://github.com/dlang-supplemental[dlang-supple
 == Changelog
 
 See link:CHANGELOG.adoc[CHANGELOG].
+
+== Contact
+
+DLang Supplemental — dlang@devcentr.org
+
+* Project: https://github.com/dlang-supplemental/dlang-supplemental.github.io
+* Site: https://dlang-supplemental.github.io
