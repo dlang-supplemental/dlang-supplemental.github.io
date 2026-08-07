@@ -3,19 +3,12 @@ ifndef::env-github[:icons: font]
 :toclevels: 2
 :sectanchors:
 
-ifndef::env-github[]
+[[readme-top]]
+
 image:https://img.shields.io/github/contributors/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Contributors,link=https://github.com/dlang-supplemental/dlang-supplemental.github.io/graphs/contributors]
 image:https://img.shields.io/github/forks/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Forks,link=https://github.com/dlang-supplemental/dlang-supplemental.github.io/network/members]
 image:https://img.shields.io/github/stars/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Stars,link=https://github.com/dlang-supplemental/dlang-supplemental.github.io/stargazers]
 image:https://img.shields.io/github/issues/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Issues,link=https://github.com/dlang-supplemental/dlang-supplemental.github.io/issues]
-endif::[]
-
-ifdef::env-github[]
-image:https://img.shields.io/github/contributors/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Contributors]
-image:https://img.shields.io/github/forks/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Forks]
-image:https://img.shields.io/github/stars/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Stars]
-image:https://img.shields.io/github/issues/dlang-supplemental/dlang-supplemental.github.io.svg?style=for-the-badge[Issues]
-endif::[]
 
 = dlang-supplemental.github.io
 
@@ -30,9 +23,18 @@ link:https://github.com/dlang-supplemental/dlang-supplemental.github.io/issues[R
 * Live site: https://dlang-supplemental.github.io/
 * Docs hub (Antora): https://dlang-supplemental.github.io/docs/
 
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
+
 == Built With
 
-* HTML and CSS (static GitHub Pages site)
+* Markup / styling
+** HTML and CSS (static GitHub Pages site)
+
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 
 == Getting Started
 
@@ -54,3 +56,7 @@ DLang Supplemental — dlang@devcentr.org
 
 * Project: https://github.com/dlang-supplemental/dlang-supplemental.github.io
 * Site: https://dlang-supplemental.github.io
+
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
