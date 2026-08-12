@@ -1,4 +1,4 @@
-*
+﻿*
 !.gitignore
 !README.adoc
 !CHANGELOG.adoc
@@ -9,3 +9,7 @@
 !logo.svg
 !logo-256.png
 !.nojekyll
+!AGENTS.md
+!STYLE.adoc
+!.cursor/
+!.cursor/**
