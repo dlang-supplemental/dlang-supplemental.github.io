@@ -186,6 +186,22 @@ a:hover {
   color: var(--brand-deep);
 }
 
+.btn--icon {
+  width: 2.75rem;
+  padding: 0;
+  color: var(--ink);
+}
+
+.btn--icon svg {
+  display: block;
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.btn--icon:hover {
+  color: var(--brand);
+}
+
 .section {
   max-width: var(--max);
   margin: 0 auto;

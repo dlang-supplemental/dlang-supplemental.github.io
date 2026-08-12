@@ -1,0 +1,7 @@
+= Notable projects and catalog wording
+:date: 2026-08-11
+
+* Clarified that notable projects land in the catalog in the docs hub powered by Antora.
+* Pointed the Notable projects lede, hero docs button, and docs CTA at that catalog (GitHub remains the full org listing).
+* Replaced the hero “Browse the org” button with the GitHub mark.
+* Added https://github.com/dlang-supplemental/dubx[`dubx`], https://github.com/dlang-supplemental/kdl-d[`kdl-d`], and https://github.com/dlang-supplemental/dqt[`dqt`] to Notable projects.
