@@ -1,0 +1,5 @@
+= Proposals on the welcome site
+:date: 2026-08-15
+
+* Added a Proposals section that loads docs-hub articles/blog posts tagged `proposal` from `page-catalog.json`.
+* Linked the thread-local GC (`tgc`) design article as the static fallback until that catalog is available.

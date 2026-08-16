@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-08-15 — Proposals on the welcome site
+
+* link:changelog-details/2026-08-15%20-%20home-proposals.adoc[Proposals section from tagged docs articles]
+
 == 2026-08-11 — Notable projects and docs-hub catalog
 
 * link:changelog-details/2026-08-11%20-%20notable-projects-catalog.adoc[Notable projects and catalog wording]

@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="proposals.js" defer></script>
 </head>
 <body>
   <div class="atmosphere" aria-hidden="true"></div>
@@ -66,6 +67,26 @@
           never leave the README stage.
         </li>
       </ul>
+    </section>
+
+    <section class="section proposals" aria-labelledby="proposals-title">
+      <h2 id="proposals-title">Proposals</h2>
+      <p class="section__lede">
+        Design write-ups tagged as proposals in the
+        <a href="https://dlang-supplemental.github.io/docs/docs/index.html">docs hub</a>.
+        The list is loaded from published articles and blog posts.
+      </p>
+      <div data-proposals data-catalog-url="/docs/page-catalog.json" data-tag="proposal">
+        <p class="section__status" data-proposals-status hidden></p>
+        <ul class="project-list" data-proposals-list>
+          <li>
+            <a href="https://dlang-supplemental.github.io/docs/docs/blog/thread-local-gc-tgc.html">
+              <span class="project-list__name">Thread-local garbage collection (tgc) for D</span>
+              <span class="project-list__desc">An opt-in per-thread GC that avoids global stop-the-world pauses so @nogc realtime work can coexist with GC threads.</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section class="section projects" aria-labelledby="projects-title">
