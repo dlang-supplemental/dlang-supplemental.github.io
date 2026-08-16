@@ -1,0 +1,20 @@
+{
+  "pages": [
+    {
+      "title": "Thread-local GC proposed upstream",
+      "description": "Opt-in per-thread collector submitted to dlang/dmd on 2 August 2026.",
+      "date": "2026-08-02",
+      "tags": ["news"],
+      "kind": "news",
+      "href": "/news/thread-local-gc-proposed-upstream.html"
+    },
+    {
+      "title": "Isolating heaps as threads isolate data",
+      "description": "Why D’s actor-ish threads still share one GC heap, and what an opt-in per-thread collector would change.",
+      "date": "2026-08-02",
+      "tags": ["blog"],
+      "kind": "blog",
+      "href": "/blog/isolating-heaps.html"
+    }
+  ]
+}

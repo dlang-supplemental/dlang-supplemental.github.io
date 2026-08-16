@@ -5,8 +5,15 @@
 !changelog-details/
 !changelog-details/**
 !index.html
-!proposals.js
+!catalog.js
+!site-catalog.json
 !styles.css
+!blog/
+!blog/**
+!news/
+!news/**
+!images/
+!images/**
 !logo.svg
 !logo-256.png
 !.nojekyll

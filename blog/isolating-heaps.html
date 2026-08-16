@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Isolating heaps as threads isolate data — dlang-supplemental</title>
+  <meta name="description" content="Why D’s actor-ish threads still share one GC heap, and what an opt-in per-thread collector would change." />
+  <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+  <header class="page-head">
+    <a class="page-head__brand" href="/">
+      <img src="/logo.svg" width="40" height="40" alt="" />
+      <span>dlang-supplemental</span>
+    </a>
+    <nav class="page-head__nav" aria-label="Site">
+      <a href="/news/">News</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#proposals">Proposals</a>
+      <a href="https://dlang-supplemental.github.io/docs/docs/index.html">Docs</a>
+    </nav>
+  </header>
+
+  <article class="article">
+    <p class="article__kicker">Blog</p>
+    <h1>Isolating heaps as threads isolate data</h1>
+    <p class="article__meta">2 August 2026 · rehash of the <a href="https://dlang-supplemental.github.io/docs/docs/blog/thread-local-gc-tgc.html">docs design article</a></p>
+
+    <p>
+      D already treats ordinary variables as thread-local.
+      <code>std.concurrency</code> then pushes you toward mailboxes:
+      copy, <code>immutable</code>, maybe a move.
+      That is an actor story, told with TLS instead of a second language.
+    </p>
+    <p>
+      The collector never got the memo.
+      There is still one process-wide heap, and when any thread collects,
+      every <em>registered</em> thread stops—including the
+      <code>@nogc</code> audio callback you promised would never allocate.
+    </p>
+
+    <figure>
+      <img src="/images/tgc-actors.svg" width="920" height="360" alt="Thread A and Thread B isolate TLS data and talk through a mailbox, but both still allocate into one process-wide GC heap" />
+      <figcaption>Private data. Public junk drawer.</figcaption>
+    </figure>
+
+    <p>
+      Detach the realtime thread if you want a hard guarantee.
+      After <code>thread_detachThis()</code> the collector will not scan it—
+      and that thread must never touch GC memory again.
+      You bought a C island. You did not buy idiomatic D on that core.
+    </p>
+
+    <h2>What “tgc” is for</h2>
+    <p>
+      We prototyped an opt-in factory named <strong>tgc</strong>
+      (thread garbage collection; some of us have been saying “realtime GC”
+      in conversation, which is a side-name only).
+      It does not replace the default conservative collector.
+      You ask for it:
+    </p>
+    <pre><code>./app --DRT-gcopt=gc:tgc</code></pre>
+
+    <figure>
+      <img src="/images/tgc-opt-in-mock.svg" width="920" height="280" alt="Mock terminal selecting tgc while the conservative factory stays registered" />
+      <figcaption>Same pluggable GC switch as conservative, precise, or manual.</figcaption>
+    </figure>
+
+    <p>
+      Each attached thread gets its own arena.
+      When Heap A collects, only Thread A’s stack, TLS, and blocks are in play.
+      No <code>thread_suspendAll</code> for that cycle.
+      Sibling GC threads keep running.
+      Detached <code>@nogc</code> threads never registered in the first place.
+    </p>
+
+    <figure>
+      <img src="/images/tgc-stw-timeline.svg" width="920" height="340" alt="Default GC pauses both threads; tgc pauses only the collecting thread" />
+      <figcaption>The latency win is pause isolation, not “faster mark-sweep.”</figcaption>
+    </figure>
+
+    <h2>The picture that sells it</h2>
+    <p>
+      Think of a small studio app: a present loop that must hold 60&nbsp;fps,
+      an audio callback that must not hitch, and a decode worker that
+      <em>does</em> allocate.
+      Today, decode’s collection can still stop the shell.
+      With tgc, decode collects locally. The window keeps presenting.
+    </p>
+
+    <figure>
+      <img src="/images/tgc-desktop-mock.svg" width="920" height="520" alt="Mock studio window with a live 60 fps preview while a decode worker collects on its own heap" />
+      <figcaption>Mock of the architecture, not a shipping product screenshot.</figcaption>
+    </figure>
+
+    <h2>What you pay</h2>
+    <p>
+      Per-thread heaps waste RAM relative to one packed global pool.
+      Thread 1 can sit on free pages Thread 2 still needs from the OS.
+      Moving a buffer without copying means a remote free queue on the
+      <em>owning</em> thread—Thread 2 must not splice Thread 1’s free lists.
+      Huge frames (4K video) still want an explicit shared region, which is
+      Phase 2, not v1.
+    </p>
+
+    <figure>
+      <img src="/images/tgc-performance-compare.svg" width="920" height="420" alt="Shared global heap with a mutex and stop-the-world versus per-thread tgc heaps" />
+      <figcaption>Choose tgc when tail latency beats peak density.</figcaption>
+    </figure>
+
+    <p>
+      Phase 2 is a many-to-many sketch: attach workers only to the regions
+      they need, so collecting Region Beta does not pause a worker that
+      never joined it. Transitive coupling can still cascade. The
+      <a href="https://dlang-supplemental.github.io/docs/docs/blog/thread-local-gc-tgc.html">docs article</a>
+      goes into that honestly.
+    </p>
+
+    <figure>
+      <img src="/images/tgc-many-to-many-regions.svg" width="920" height="480" alt="Partitioned GC regions: some workers share Alpha and Beta, one worker stays local-only" />
+      <figcaption>Not one global shared heap—attach by need.</figcaption>
+    </figure>
+
+    <h2>Not the only GC in flight</h2>
+    <p>
+      <a href="https://github.com/symmetryinvestments/symgc">SymGC</a>
+      (Steven Schveighoffer / Symmetry Investments; <code>gc:sdc</code>)
+      is a clean-slate collector aimed at allocation throughput, the global
+      alloc lock, and a modern layout.
+      <a href="https://www.youtube.com/watch?v=kwG95Ek23fk">We Need a New GC</a>
+      from DConf ’24 is the public talk.
+      That work might become a future default.
+      tgc is a narrower experiment: pause isolation for mixed GC /
+      <code>@nogc</code> processes. Complementary axes, not a turf war.
+    </p>
+
+    <h2>Where to look</h2>
+    <p>
+      We submitted the prototype upstream on 2 August 2026:
+      <a href="https://github.com/dlang/dmd/pull/23514">dlang/dmd#23514</a>.
+      Rainer already flagged real limits (immutable sharing, header size,
+      linear <code>findBlock</code>, remote-free assumptions).
+      Those belong in review, not in this essay.
+    </p>
+    <ul>
+      <li><a href="/news/thread-local-gc-proposed-upstream.html">News: Thread-local GC proposed upstream</a></li>
+      <li><a href="https://dlang-supplemental.github.io/docs/docs/blog/thread-local-gc-tgc.html">Docs: Thread-local garbage collection (tgc) for D</a></li>
+      <li><a href="https://github.com/dlang-supplemental/dmd/tree/feature/tgc">Prototype branch <code>feature/tgc</code></a></li>
+      <li><a href="https://forum.dlang.org/post/eyivmktfvmdlvhbyyphd@forum.dlang.org">Forum post</a></li>
+    </ul>
+    <p>
+      Treat v1 as design review and measurement, not a production realtime
+      guarantee. If you already pass messages and keep the shell off the
+      worker heap, this is the GC half of that architecture.
+    </p>
+  </article>
+
+  <footer class="footer">
+    <p><a href="https://github.com/dlang-supplemental">github.com/dlang-supplemental</a></p>
+  </footer>
+</body>
+</html>

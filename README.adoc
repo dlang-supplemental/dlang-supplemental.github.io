@@ -63,8 +63,9 @@ Open `index.html` locally or push to the `main` branch; GitHub Pages serves the 
 
 == Usage
 
-* `index.html` — welcome page (philosophy, proposals, notable repos, docs CTA)
-* `proposals.js` — loads docs-hub articles tagged `proposal` from `page-catalog.json`
+* `index.html` — welcome page (philosophy, news, blog, proposals, notable repos, docs CTA)
+* `blog/` / `news/` — org-site essays and announcements
+* `catalog.js` / `site-catalog.json` — load tagged news and blog lists
 * `styles.css` — page styles
 * `logo.svg` / `logo-256.png` — org mark
 

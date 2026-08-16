@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News — dlang-supplemental</title>
+  <meta name="description" content="Short announcements from dlang-supplemental." />
+  <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/catalog.js" defer></script>
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+  <header class="page-head">
+    <a class="page-head__brand" href="/">
+      <img src="/logo.svg" width="40" height="40" alt="" />
+      <span>dlang-supplemental</span>
+    </a>
+    <nav class="page-head__nav" aria-label="Site">
+      <a href="/news/">News</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#proposals">Proposals</a>
+      <a href="https://dlang-supplemental.github.io/docs/docs/index.html">Docs</a>
+    </nav>
+  </header>
+  <main class="section">
+    <h1>News</h1>
+    <p class="section__lede">Short notices. Longer design write-ups live on the <a href="/blog/">blog</a> and in the <a href="https://dlang-supplemental.github.io/docs/docs/index.html">docs hub</a>.</p>
+    <div data-catalog data-catalog-url="/site-catalog.json" data-tag="news" data-empty="No news yet.">
+      <p class="section__status" data-catalog-status hidden></p>
+      <ul class="project-list" data-catalog-list>
+        <li>
+          <a href="/news/thread-local-gc-proposed-upstream.html">
+            <span class="project-list__name">Thread-local GC proposed upstream</span>
+            <span class="project-list__desc">Opt-in per-thread collector submitted to dlang/dmd on 2 August 2026.</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+  <footer class="footer">
+    <p><a href="https://github.com/dlang-supplemental">github.com/dlang-supplemental</a></p>
+  </footer>
+</body>
+</html>

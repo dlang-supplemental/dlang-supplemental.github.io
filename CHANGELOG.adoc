@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-08-15 — News, blog, and tagged proposals
+
+* link:changelog-details/2026-08-15%20-%20news-blog-proposals.adoc[News and blog on the welcome site, plus docs proposals index]
+
 == 2026-08-15 — Proposals on the welcome site
 
 * link:changelog-details/2026-08-15%20-%20home-proposals.adoc[Proposals section from tagged docs articles]

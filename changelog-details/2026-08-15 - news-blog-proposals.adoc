@@ -1,0 +1,7 @@
+= News, blog, and tagged proposals
+:date: 2026-08-15
+
+* Added News and Blog sections on the welcome site, with indexes and a `site-catalog.json` loader.
+* Published a short news post for the `tgc` upstream submission (opened 2 August 2026, 23:02 UTC; https://github.com/dlang/dmd/pull/23514[dlang/dmd#23514]).
+* Published an essay rehash of the docs `tgc` article, with shared SVG diagrams and window mockups.
+* Proposals still load from the docs-hub `page-catalog.json` and now point at the docs proposals index.

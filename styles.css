@@ -209,7 +209,9 @@ a:hover {
 }
 
 .section.projects,
-.section.proposals {
+.section.proposals,
+.section.news,
+.section.blog {
   max-width: var(--wide);
 }
 
@@ -321,6 +323,128 @@ a:hover {
 
 .footer a:hover {
   color: var(--brand);
+}
+
+.page-head {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 1.25rem clamp(1.25rem, 4vw, 2rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.25rem;
+}
+
+.page-head__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-head__brand img {
+  display: block;
+  border-radius: 0.45rem;
+}
+
+.page-head__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.1rem;
+  font-size: 0.95rem;
+}
+
+.page-head__nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.page-head__nav a:hover {
+  color: var(--brand);
+}
+
+.article {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2rem) clamp(3rem, 8vw, 5rem);
+}
+
+.article h1 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 4.5vw, 2.65rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.article h2 {
+  margin: 2rem 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.article__kicker {
+  margin: 0 0 0.35rem;
+  color: var(--brand-deep);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.article__meta {
+  margin: 0 0 1.5rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.article figure {
+  margin: 1.4rem 0 1.6rem;
+}
+
+.article figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: #fff;
+}
+
+.article figcaption {
+  margin-top: 0.45rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.article pre {
+  overflow: auto;
+  padding: 0.9rem 1rem;
+  border-radius: 0.4rem;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+}
+
+.article code {
+  font-family: "Cascadia Code", "Consolas", monospace;
+  font-size: 0.92em;
+}
+
+.section h1 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 4.5vw, 2.45rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
 }
 
 @media (max-width: 640px) {

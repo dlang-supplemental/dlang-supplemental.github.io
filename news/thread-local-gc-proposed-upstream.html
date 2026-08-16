@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thread-local GC proposed upstream — dlang-supplemental</title>
+  <meta name="description" content="Opt-in thread-local GC (tgc) submitted to dlang/dmd on 2 August 2026." />
+  <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+  <header class="page-head">
+    <a class="page-head__brand" href="/">
+      <img src="/logo.svg" width="40" height="40" alt="" />
+      <span>dlang-supplemental</span>
+    </a>
+    <nav class="page-head__nav" aria-label="Site">
+      <a href="/news/">News</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#proposals">Proposals</a>
+      <a href="https://dlang-supplemental.github.io/docs/docs/index.html">Docs</a>
+    </nav>
+  </header>
+
+  <article class="article">
+    <p class="article__kicker">News</p>
+    <h1>Thread-local GC proposed upstream</h1>
+    <p class="article__meta">2 August 2026</p>
+    <p>
+      We opened an opt-in thread-local garbage collector for D—registered as
+      <strong>tgc</strong>—against upstream DMD/druntime.
+    </p>
+    <p>
+      GitHub records the pull request as opened
+      <time datetime="2026-08-02T23:02:26Z">2 August 2026, 23:02 UTC</time>:
+      <a href="https://github.com/dlang/dmd/pull/23514">dlang/dmd#23514</a>.
+    </p>
+    <p>
+      Select it at runtime. The default conservative collector does not change:
+    </p>
+    <pre><code>./app --DRT-gcopt=gc:tgc</code></pre>
+    <figure>
+      <img src="/images/tgc-opt-in-mock.svg" alt="Mock terminal enabling tgc with --DRT-gcopt=gc:tgc" width="920" height="280" />
+      <figcaption>Opt-in only. Conservative stays the default factory.</figcaption>
+    </figure>
+    <p>
+      Each attached thread owns a private heap. A local collection should not
+      call <code>thread_suspendAll</code>, so sibling threads and detached
+      <code>@nogc</code> workers keep running. Cross-thread sharing of mutable
+      GC pointers is out of scope for v1.
+    </p>
+    <p>Read next:</p>
+    <ul>
+      <li><a href="/blog/isolating-heaps.html">Essay: Isolating heaps as threads isolate data</a></li>
+      <li><a href="https://dlang-supplemental.github.io/docs/docs/blog/thread-local-gc-tgc.html">Docs: technical design</a></li>
+      <li><a href="https://forum.dlang.org/post/eyivmktfvmdlvhbyyphd@forum.dlang.org">Forum thread</a> (posted 3 August 2026)</li>
+    </ul>
+  </article>
+
+  <footer class="footer">
+    <p><a href="https://github.com/dlang-supplemental">github.com/dlang-supplemental</a></p>
+  </footer>
+</body>
+</html>
