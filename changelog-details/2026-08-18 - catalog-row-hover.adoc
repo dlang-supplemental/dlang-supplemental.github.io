@@ -1,0 +1,4 @@
+= Keep catalog rows from wrapping on hover
+:date: 2026-08-18
+
+* Reserved right padding on `.project-list` links equal to the hover indent, then swapped it to the left on hover, so news, blog, proposals, and notable projects keep a stable text width.

@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-08-18 — Catalog row hover
+
+* link:changelog-details/2026-08-18%20-%20catalog-row-hover.adoc[Keep list rows from wrapping when the hover indent lands]
+
 == 2026-08-17 — Avalonia bindings
 
 * link:changelog-details/2026-08-17%20-%20avalonia-d.adoc[News, essay, and notable-project listing for avalonia-d]

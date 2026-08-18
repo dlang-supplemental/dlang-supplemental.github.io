@@ -270,18 +270,23 @@ a:hover {
 }
 
 .project-list a {
+  --project-list-pad: 0.15rem;
+  --project-list-shift: 0.25rem;
   display: grid;
   grid-template-columns: minmax(9rem, 14rem) 1fr;
   gap: 0.75rem 1.5rem;
-  padding: 1rem 0.15rem;
+  padding: 1rem var(--project-list-pad);
+  /* Reserve the hover indent on the right so descriptions do not wrap when the row shifts. */
+  padding-right: calc(var(--project-list-pad) + var(--project-list-shift));
   text-decoration: none;
   color: inherit;
-  transition: background 0.15s ease, padding-left 0.15s ease;
+  transition: background 0.15s ease, padding 0.15s ease;
 }
 
 .project-list a:hover {
   background: color-mix(in srgb, var(--brand) 6%, transparent);
-  padding-left: 0.4rem;
+  padding-left: calc(var(--project-list-pad) + var(--project-list-shift));
+  padding-right: var(--project-list-pad);
   color: inherit;
 }
 
