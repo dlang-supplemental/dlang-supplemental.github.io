@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-08-17 — Avalonia bindings
+
+* link:changelog-details/2026-08-17%20-%20avalonia-d.adoc[News, essay, and notable-project listing for avalonia-d]
+
 == 2026-08-15 — News, blog, and tagged proposals
 
 * link:changelog-details/2026-08-15%20-%20news-blog-proposals.adoc[News and blog on the welcome site, plus docs proposals index]

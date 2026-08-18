@@ -1,6 +1,22 @@
 {
   "pages": [
     {
+      "title": "Avalonia bindings published for D",
+      "description": "A D process can host Avalonia windows through a C ABI, with ShadUI for shadcn-style controls.",
+      "date": "2026-08-17",
+      "tags": ["news"],
+      "kind": "news",
+      "href": "/news/avalonia-bindings-published.html"
+    },
+    {
+      "title": "Hosting Avalonia from D",
+      "description": "Avalonia stays primitive; ShadUI already cloned shadcn. The D-shaped problem is hosting .NET, not restyling buttons.",
+      "date": "2026-08-17",
+      "tags": ["blog"],
+      "kind": "blog",
+      "href": "/blog/hosting-avalonia-from-d.html"
+    },
+    {
       "title": "Thread-local GC proposed upstream",
       "description": "Opt-in per-thread collector submitted to dlang/dmd on 2 August 2026.",
       "date": "2026-08-02",

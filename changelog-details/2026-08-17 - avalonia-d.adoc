@@ -1,0 +1,6 @@
+= Avalonia bindings on the welcome site
+:date: 2026-08-17
+
+* Published a news post for `avalonia-d`.
+* Published an essay on hosting Avalonia from D (ShadUI, not a shadcn clone).
+* Added avalonia-d to Notable projects and the philosophy bind list.

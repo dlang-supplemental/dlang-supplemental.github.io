@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avalonia bindings published for D — dlang-supplemental</title>
+  <meta name="description" content="A D process can host Avalonia windows through a C ABI, with ShadUI for shadcn-style controls." />
+  <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+  <header class="page-head">
+    <a class="page-head__brand" href="/">
+      <img src="/logo.svg" width="40" height="40" alt="" />
+      <span>dlang-supplemental</span>
+    </a>
+    <nav class="page-head__nav" aria-label="Site">
+      <a href="/news/">News</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#proposals">Proposals</a>
+      <a href="https://dlang-supplemental.github.io/docs/docs/index.html">Docs</a>
+    </nav>
+  </header>
+
+  <article class="article">
+    <p class="article__kicker">News</p>
+    <h1>Avalonia bindings published for D</h1>
+    <p class="article__meta">17 August 2026</p>
+    <p>
+      A D program can now open an Avalonia desktop window without a C#
+      <code>Main</code>.
+    </p>
+    <p>
+      The package is
+      <a href="https://github.com/dlang-supplemental/avalonia-d">avalonia-d</a>.
+      The repository went public on
+      <time datetime="2026-08-17">17 August 2026</time>.
+    </p>
+    <p>
+      The hello example is a D <code>main</code>.
+      It calls <code>init</code>, builds a stack, hangs a button on it, and
+      blocks in <code>run()</code>.
+      The window that appears is ShadUI chrome: themed title bar, dark
+      <code>ShadTheme</code>, a Primary-class button—not a bare Avalonia
+      rectangle with system decorations.
+    </p>
+    <p>
+      Avalonia is a .NET UI toolkit.
+      No D wrapper showed up on GitHub, awesome-d, or the DUB registry before
+      this package.
+      D cannot import a C# assembly, so the host exports a small C ABI through
+      DNNE and D wraps opaque handles.
+    </p>
+    <p>
+      The high-level look is not a from-scratch shadcn clone.
+      <a href="https://github.com/accntech/shad-ui">ShadUI</a> already covers
+      that kit for Avalonia (MIT, NuGet <code>ShadUI</code>).
+      The host consumes it.
+    </p>
+    <p>Read next:</p>
+    <ul>
+      <li><a href="/blog/hosting-avalonia-from-d.html">Essay: Hosting Avalonia from D</a></li>
+      <li><a href="https://dlang-supplemental.github.io/docs/avalonia-d/index.html">Docs: avalonia-d</a></li>
+      <li><a href="https://github.com/dlang-supplemental/avalonia-d">Source repository</a></li>
+    </ul>
+  </article>
+
+  <footer class="footer">
+    <p><a href="https://github.com/dlang-supplemental">github.com/dlang-supplemental</a></p>
+  </footer>
+</body>
+</html>
