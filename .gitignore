@@ -5,9 +5,14 @@
 !changelog-details/
 !changelog-details/**
 !index.html
+!package.json
+!pnpm-lock.yaml
 !catalog.js
 !site-catalog.json
 !styles.css
+!themed-svg.js
+!scripts/
+!scripts/**
 !blog/
 !blog/**
 !news/

@@ -45,7 +45,7 @@
     </p>
 
     <figure>
-      <img src="/images/tgc-actors.svg" width="920" height="360" alt="Thread A and Thread B isolate TLS data and talk through a mailbox, but both still allocate into one process-wide GC heap" />
+      <img data-themed-svg src="/images/tgc-actors.svg" width="920" height="360" alt="Thread A and Thread B isolate TLS data and talk through a mailbox, but both still allocate into one process-wide GC heap" />
       <figcaption>Private data. Public junk drawer.</figcaption>
     </figure>
 
@@ -67,7 +67,7 @@
     <pre><code>./app --DRT-gcopt=gc:tgc</code></pre>
 
     <figure>
-      <img src="/images/tgc-opt-in-mock.svg" width="920" height="280" alt="Mock terminal selecting tgc while the conservative factory stays registered" />
+      <img data-themed-svg src="/images/tgc-opt-in-mock.svg" width="920" height="280" alt="Mock terminal selecting tgc while the conservative factory stays registered" />
       <figcaption>Same pluggable GC switch as conservative, precise, or manual.</figcaption>
     </figure>
 
@@ -80,7 +80,7 @@
     </p>
 
     <figure>
-      <img src="/images/tgc-stw-timeline.svg" width="920" height="340" alt="Default GC pauses both threads; tgc pauses only the collecting thread" />
+      <img data-themed-svg src="/images/tgc-stw-timeline.svg" width="920" height="340" alt="Default GC pauses both threads; tgc pauses only the collecting thread" />
       <figcaption>The latency win is pause isolation, not “faster mark-sweep.”</figcaption>
     </figure>
 
@@ -94,7 +94,7 @@
     </p>
 
     <figure>
-      <img src="/images/tgc-desktop-mock.svg" width="920" height="520" alt="Mock studio window with a live 60 fps preview while a decode worker collects on its own heap" />
+      <img data-themed-svg src="/images/tgc-desktop-mock.svg" width="920" height="520" alt="Mock studio window with a live 60 fps preview while a decode worker collects on its own heap" />
       <figcaption>Mock of the architecture, not a shipping product screenshot.</figcaption>
     </figure>
 
@@ -109,7 +109,7 @@
     </p>
 
     <figure>
-      <img src="/images/tgc-performance-compare.svg" width="920" height="420" alt="Shared global heap with a mutex and stop-the-world versus per-thread tgc heaps" />
+      <img data-themed-svg src="/images/tgc-performance-compare.svg" width="920" height="420" alt="Shared global heap with a mutex and stop-the-world versus per-thread tgc heaps" />
       <figcaption>Choose tgc when tail latency beats peak density.</figcaption>
     </figure>
 
@@ -122,7 +122,7 @@
     </p>
 
     <figure>
-      <img src="/images/tgc-many-to-many-regions.svg" width="920" height="480" alt="Partitioned GC regions: some workers share Alpha and Beta, one worker stays local-only" />
+      <img data-themed-svg src="/images/tgc-many-to-many-regions.svg" width="920" height="480" alt="Partitioned GC regions: some workers share Alpha and Beta, one worker stays local-only" />
       <figcaption>Not one global shared heap—attach by need.</figcaption>
     </figure>
 
@@ -163,5 +163,6 @@
   <footer class="footer">
     <p><a href="https://github.com/dlang-supplemental">github.com/dlang-supplemental</a></p>
   </footer>
+  <script type="module" src="/themed-svg.js"></script>
 </body>
 </html>

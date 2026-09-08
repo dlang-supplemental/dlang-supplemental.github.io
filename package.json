@@ -1,0 +1,13 @@
+{
+  "name": "@dlang-supplemental/welcome-site",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.28.1",
+  "scripts": {
+    "diagrams": "node scripts/sync-diagrams.mjs",
+    "diagrams:check": "node scripts/sync-diagrams.mjs --check"
+  },
+  "dependencies": {
+    "@dev-centr/themed-svg": "0.1.1"
+  }
+}

@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-09-08 — Themed tgc diagrams
+
+* Synchronize the four canonical adaptive and host SVG pairs from the docs repository and progressively apply the site palette with `@dev-centr/themed-svg` 0.1.1.
+
 == 2026-08-18 — Catalog row hover
 
 * link:changelog-details/2026-08-18%20-%20catalog-row-hover.adoc[Keep list rows from wrapping when the hover indent lands]
