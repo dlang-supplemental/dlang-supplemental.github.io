@@ -2,7 +2,7 @@
 
 == 2026-09-08 — Themed tgc diagrams
 
-* Synchronize the four canonical adaptive and host SVG pairs from the docs repository and progressively apply the site palette with `@dev-centr/themed-svg` 0.1.1.
+* Synchronize all six canonical adaptive and host SVG pairs from the docs repository, preserve the fixed originals, and progressively apply the site palette with `@dev-centr/themed-svg` 0.1.1.
 
 == 2026-08-18 — Catalog row hover
 

@@ -12,7 +12,9 @@ if (!sourceDir) throw new Error(`Canonical dlang-supplemental/docs images not fo
 
 const names = [
   "tgc-actors",
+  "tgc-desktop-mock",
   "tgc-many-to-many-regions",
+  "tgc-opt-in-mock",
   "tgc-performance-compare",
   "tgc-stw-timeline",
 ]
