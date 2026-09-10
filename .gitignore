@@ -24,5 +24,7 @@
 !.nojekyll
 !AGENTS.md
 !STYLE.adoc
+!robots.txt
+!sitemap.xml
 !.cursor/
 !.cursor/**

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://dlang-supplemental.github.io/</loc>
+  </url>
+  <url>
+    <loc>https://dlang-supplemental.github.io/blog/</loc>
+  </url>
+  <url>
+    <loc>https://dlang-supplemental.github.io/blog/hosting-avalonia-from-d.html</loc>
+  </url>
+  <url>
+    <loc>https://dlang-supplemental.github.io/blog/isolating-heaps.html</loc>
+  </url>
+  <url>
+    <loc>https://dlang-supplemental.github.io/news/</loc>
+  </url>
+  <url>
+    <loc>https://dlang-supplemental.github.io/news/avalonia-bindings-published.html</loc>
+  </url>
+  <url>
+    <loc>https://dlang-supplemental.github.io/news/thread-local-gc-proposed-upstream.html</loc>
+  </url>
+</urlset>

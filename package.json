@@ -5,7 +5,8 @@
   "packageManager": "pnpm@10.28.1",
   "scripts": {
     "diagrams": "node scripts/sync-diagrams.mjs",
-    "diagrams:check": "node scripts/sync-diagrams.mjs --check"
+    "diagrams:check": "node scripts/sync-diagrams.mjs --check",
+    "sitemap": "node scripts/generate-sitemap.mjs"
   },
   "dependencies": {
     "@dev-centr/themed-svg": "0.1.1"

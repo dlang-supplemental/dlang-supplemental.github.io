@@ -1,5 +1,11 @@
 = Changelog
 
+== 2026-09-10 — Sitemap and robots.txt
+
+* Add `scripts/generate-sitemap.mjs` (`pnpm sitemap`) to emit `sitemap.xml` from committed HTML routes.
+* Publish `robots.txt` with `Sitemap: https://dlang-supplemental.github.io/sitemap.xml`.
+* Allow-list both files in `.gitignore`.
+
 == 2026-09-08 — Themed tgc diagrams
 
 * Synchronize all six canonical adaptive and host SVG pairs from the docs repository, preserve the fixed originals, and progressively apply the site palette with `@dev-centr/themed-svg` 0.1.1.
